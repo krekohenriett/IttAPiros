@@ -29,32 +29,38 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="jMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="jMenu3">
+            <Menu class="javax.swing.JMenu" name="jFajl">
               <Properties>
                 <Property name="text" type="java.lang.String" value="F&#xe1;jl"/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+                <MenuItem class="javax.swing.JMenuItem" name="Mentes">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ment&#xe9;s"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+                <MenuItem class="javax.swing.JMenuItem" name="Betoltes">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Bet&#xf6;lt&#xe9;s"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BetoltesActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu4">
+            <Menu class="javax.swing.JMenu" name="Uj">
               <Properties>
                 <Property name="text" type="java.lang.String" value="J&#xe1;t&#xe9;k"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UjMouseClicked"/>
+              </Events>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
                   <Properties>
@@ -64,20 +70,20 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
+                <MenuItem class="javax.swing.JMenuItem" name="Harom">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="3 poh&#xe1;r"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem7ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HaromActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+                <MenuItem class="javax.swing.JMenuItem" name="Negy">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="4 poh&#xe1;r"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NegyActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
@@ -120,16 +126,16 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCBGolyo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBPohar1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBPohar2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="74" max="32767" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBPohar3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -141,31 +147,31 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="129" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBPohar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBPohar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBPohar3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+              <Component id="jCBGolyo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jBPohar1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Poh&#xe1;r1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jBPohar2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Poh&#xe1;r2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="jBPohar3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton3"/>
       </Properties>
@@ -175,7 +181,7 @@
         <Property name="text" type="java.lang.String" value="Tal&#xe1;lt(igen/nem): "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="jCBGolyo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tippel&#xe9;senk&#xe9;nt a goly&#xf3; legyen &#xfa;j helyen"/>
       </Properties>

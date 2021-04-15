@@ -5,6 +5,8 @@
  */
 package ittapiros;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User1
@@ -31,20 +33,20 @@ public class Ablak extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jBPohar1 = new javax.swing.JButton();
+        jBPohar2 = new javax.swing.JButton();
+        jBPohar3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jCBGolyo = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenu = new javax.swing.JMenu();
+        jFajl = new javax.swing.JMenu();
+        Mentes = new javax.swing.JMenuItem();
+        Betoltes = new javax.swing.JMenuItem();
+        Uj = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        Harom = new javax.swing.JMenuItem();
+        Negy = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -58,29 +60,39 @@ public class Ablak extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("\"Itt a piros...\"");
 
-        jButton1.setText("Pohár1");
+        jBPohar1.setText("Pohár1");
 
-        jButton2.setText("Pohár2");
+        jBPohar2.setText("Pohár2");
 
-        jButton3.setText("jButton3");
+        jBPohar3.setText("jButton3");
 
         jLabel1.setText("Talált(igen/nem): ");
 
-        jCheckBox1.setText("Tippelésenként a golyó legyen új helyen");
+        jCBGolyo.setText("Tippelésenként a golyó legyen új helyen");
 
-        jMenu1.setText("Menu");
+        jMenu.setText("Menu");
 
-        jMenu3.setText("Fájl");
+        jFajl.setText("Fájl");
 
-        jMenuItem6.setText("Mentés");
-        jMenu3.add(jMenuItem6);
+        Mentes.setText("Mentés");
+        jFajl.add(Mentes);
 
-        jMenuItem2.setText("Betöltés");
-        jMenu3.add(jMenuItem2);
+        Betoltes.setText("Betöltés");
+        Betoltes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BetoltesActionPerformed(evt);
+            }
+        });
+        jFajl.add(Betoltes);
 
-        jMenu1.add(jMenu3);
+        jMenu.add(jFajl);
 
-        jMenu4.setText("Játék");
+        Uj.setText("Játék");
+        Uj.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UjMouseClicked(evt);
+            }
+        });
 
         jMenuItem5.setText("Új játék");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -88,27 +100,27 @@ public class Ablak extends javax.swing.JFrame {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        Uj.add(jMenuItem5);
 
-        jMenuItem7.setText("3 pohár");
-        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+        Harom.setText("3 pohár");
+        Harom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem7ActionPerformed(evt);
+                HaromActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem7);
+        Uj.add(Harom);
 
-        jMenuItem8.setText("4 pohár");
-        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+        Negy.setText("4 pohár");
+        Negy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem8ActionPerformed(evt);
+                NegyActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem8);
+        Uj.add(Negy);
 
-        jMenu1.add(jMenu4);
+        jMenu.add(Uj);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu);
 
         setJMenuBar(jMenuBar1);
 
@@ -124,15 +136,15 @@ public class Ablak extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jCheckBox1)
+                        .addComponent(jCBGolyo)
                         .addGap(14, 14, 14))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jButton1)
+                        .addComponent(jBPohar1)
                         .addGap(63, 63, 63)
-                        .addComponent(jButton2)
+                        .addComponent(jBPohar2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                        .addComponent(jBPohar3)))
                 .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
@@ -140,13 +152,13 @@ public class Ablak extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(129, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jBPohar1)
+                    .addComponent(jBPohar2)
+                    .addComponent(jBPohar3))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
-                .addComponent(jCheckBox1)
+                .addComponent(jCBGolyo)
                 .addGap(16, 16, 16))
         );
 
@@ -157,13 +169,26 @@ public class Ablak extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+    private void HaromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HaromActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem7ActionPerformed
+        
+    }//GEN-LAST:event_HaromActionPerformed
 
-    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    private void NegyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NegyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem8ActionPerformed
+//        System.out.println("Ez a mód nem elérhető!");
+       
+           JOptionPane.showMessageDialog(this, "Ez a mód jelenleg nem elérhető!");
+      
+    }//GEN-LAST:event_NegyActionPerformed
+
+    private void BetoltesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetoltesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BetoltesActionPerformed
+
+    private void UjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UjMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UjMouseClicked
 
     /**
      * @param args the command line arguments
@@ -201,23 +226,23 @@ public class Ablak extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JMenuItem Betoltes;
+    private javax.swing.JMenuItem Harom;
+    private javax.swing.JMenuItem Mentes;
+    private javax.swing.JMenuItem Negy;
+    private javax.swing.JMenu Uj;
+    private javax.swing.JButton jBPohar1;
+    private javax.swing.JButton jBPohar2;
+    private javax.swing.JButton jBPohar3;
+    private javax.swing.JCheckBox jCBGolyo;
+    private javax.swing.JMenu jFajl;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
