@@ -5,6 +5,11 @@
  */
 package ittapiros;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,7 +41,7 @@ public class Ablak extends javax.swing.JFrame {
         jBPohar1 = new javax.swing.JButton();
         jBPohar2 = new javax.swing.JButton();
         jBPohar3 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jVissza = new javax.swing.JLabel();
         jCBGolyo = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu = new javax.swing.JMenu();
@@ -61,20 +66,45 @@ public class Ablak extends javax.swing.JFrame {
         setTitle("\"Itt a piros...\"");
 
         jBPohar1.setText("Pohár1");
+        jBPohar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBPohar1ActionPerformed(evt);
+            }
+        });
 
         jBPohar2.setText("Pohár2");
+        jBPohar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBPohar2ActionPerformed(evt);
+            }
+        });
 
-        jBPohar3.setText("jButton3");
+        jBPohar3.setText("Pohár3");
+        jBPohar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBPohar3ActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("Talált(igen/nem): ");
+        jVissza.setText("Talált(igen/nem): ");
 
         jCBGolyo.setText("Tippelésenként a golyó legyen új helyen");
+        jCBGolyo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBGolyoActionPerformed(evt);
+            }
+        });
 
         jMenu.setText("Menu");
 
         jFajl.setText("Fájl");
 
         Mentes.setText("Mentés");
+        Mentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MentesActionPerformed(evt);
+            }
+        });
         jFajl.add(Mentes);
 
         Betoltes.setText("Betöltés");
@@ -130,7 +160,7 @@ public class Ablak extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jVissza)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -143,7 +173,7 @@ public class Ablak extends javax.swing.JFrame {
                         .addComponent(jBPohar1)
                         .addGap(63, 63, 63)
                         .addComponent(jBPohar2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                         .addComponent(jBPohar3)))
                 .addGap(18, 18, 18))
         );
@@ -156,7 +186,7 @@ public class Ablak extends javax.swing.JFrame {
                     .addComponent(jBPohar2)
                     .addComponent(jBPohar3))
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addComponent(jVissza)
                 .addGap(47, 47, 47)
                 .addComponent(jCBGolyo)
                 .addGap(16, 16, 16))
@@ -166,20 +196,24 @@ public class Ablak extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
+        //uj jatek
+        System.out.println("Új játék");
+        jBPohar1ActionPerformed(evt);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void HaromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HaromActionPerformed
         // TODO add your handling code here:
-        
+                jBPohar1ActionPerformed(evt);
+
+
     }//GEN-LAST:event_HaromActionPerformed
 
     private void NegyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NegyActionPerformed
         // TODO add your handling code here:
 //        System.out.println("Ez a mód nem elérhető!");
-       
-           JOptionPane.showMessageDialog(this, "Ez a mód jelenleg nem elérhető!");
-      
+
+        JOptionPane.showMessageDialog(this, "Ez a mód jelenleg nem elérhető!");
+
     }//GEN-LAST:event_NegyActionPerformed
 
     private void BetoltesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetoltesActionPerformed
@@ -189,6 +223,64 @@ public class Ablak extends javax.swing.JFrame {
     private void UjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UjMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_UjMouseClicked
+
+    private void MentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MentesActionPerformed
+        // TODO add your handling code here:
+        String ures = "üres";
+        boolean mentes = Mentes.isSelected();
+        if (mentes == true) {
+            System.out.println("A gólyó helye: ");
+        } else {
+            System.out.println("------");
+        }
+        try {
+            Files.write(Paths.get("config.txt"), ures.getBytes());
+
+        } catch (IOException ex) {
+            Logger.getLogger(Ablak.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_MentesActionPerformed
+
+    private void jBPohar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPohar1ActionPerformed
+        // TODO add your handling code here:
+        boolean golyo1 = jBPohar1.isSelected();
+        
+        String jVissza="Talált";
+//        System.out.println("Talált");
+            if (golyo1!=true) {
+                System.out.println(jVissza);
+            }else
+                System.out.println("Nem talált");
+
+    }//GEN-LAST:event_jBPohar1ActionPerformed
+
+    private void jBPohar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPohar2ActionPerformed
+        // TODO add your handling code here:
+        boolean golyo2=jBPohar2.isSelected();
+        if (golyo2==true) {
+            System.out.println("Talált");
+        }else{
+        System.out.println("Nem talált");
+        }
+
+    }//GEN-LAST:event_jBPohar2ActionPerformed
+
+    private void jBPohar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPohar3ActionPerformed
+        // TODO add your handling code here:
+        boolean golyo3=jBPohar3.isSelected();
+        if (golyo3==true) {
+            System.out.println("Talált");
+        }else{
+        System.out.println("Nem talált");
+        }
+    }//GEN-LAST:event_jBPohar3ActionPerformed
+
+    private void jCBGolyoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBGolyoActionPerformed
+        jBPohar2ActionPerformed(evt);
+        
+    }//GEN-LAST:event_jCBGolyoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,16 +296,24 @@ public class Ablak extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ablak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ablak.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ablak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ablak.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ablak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ablak.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ablak.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ablak.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -236,7 +336,6 @@ public class Ablak extends javax.swing.JFrame {
     private javax.swing.JButton jBPohar3;
     private javax.swing.JCheckBox jCBGolyo;
     private javax.swing.JMenu jFajl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -244,5 +343,6 @@ public class Ablak extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JLabel jVissza;
     // End of variables declaration//GEN-END:variables
 }

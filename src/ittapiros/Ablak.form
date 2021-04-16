@@ -43,6 +43,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ment&#xe9;s"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MentesActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="Betoltes">
                   <Properties>
@@ -119,7 +122,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jVissza" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -134,7 +137,7 @@
                       <Component id="jBPohar1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Component id="jBPohar2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="74" max="32767" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                       <Component id="jBPohar3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -152,7 +155,7 @@
                   <Component id="jBPohar3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jVissza" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
               <Component id="jCBGolyo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -165,18 +168,27 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Poh&#xe1;r1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBPohar1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBPohar2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Poh&#xe1;r2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBPohar2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBPohar3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton3"/>
+        <Property name="text" type="java.lang.String" value="Poh&#xe1;r3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBPohar3ActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jVissza">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tal&#xe1;lt(igen/nem): "/>
       </Properties>
@@ -185,6 +197,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Tippel&#xe9;senk&#xe9;nt a goly&#xf3; legyen &#xfa;j helyen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBGolyoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
